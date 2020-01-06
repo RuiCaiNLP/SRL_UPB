@@ -207,7 +207,7 @@ def get_batch(input_data, batch_size, word2idx, fr_word2idx, lemma2idx, pos2idx,
 
         pad_argument_batch = np.array(pad_batch(argument_batch, batch_size, argument2idx[_PAD_]))
 
-        for i in range(batch_size):
+        for i in range(len(pad_argument_batch)):
             for j in range(len(pad_argument_batch[i])):
                 if pad_argument_batch[i][j]>5:
                     pad_argument_batch[i][j] = 1
