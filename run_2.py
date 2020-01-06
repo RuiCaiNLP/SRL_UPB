@@ -184,7 +184,7 @@ if __name__ == '__main__':
     train_data = data_utils.load_dump_data(train_input_file)
     dev_data = data_utils.load_dump_data(dev_input_file)
     train_dataset = train_data['input_data']
-    dev_dataset = dev_data['input_data']
+    dev_dataset = dev_data['input_data'][:9000]
 
     train_input_file_fr = os.path.join(os.path.dirname(__file__), 'temp/train_fr.pickle.input')
     dev_input_file_fr = os.path.join(os.path.dirname(__file__), 'temp/dev_fr.pickle.input')
