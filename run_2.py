@@ -421,7 +421,7 @@ if __name__ == '__main__':
                     print("para loss:", batch_i, u_loss.item(), u_loss_2.item(), copy_loss)
                     #print(coverage)
                 """
-                if batch_i > 0 and batch_i % show_steps == 0:
+                if batch_i > -1 and batch_i % show_steps == 0:
                     srl_model.eval()
                     _, pred = torch.max(out, 1)
                     pred = get_data(pred)
