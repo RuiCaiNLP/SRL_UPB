@@ -432,7 +432,7 @@ if __name__ == '__main__':
                     #eval_train_batch(epoch, batch_i, loss.item(), flat_argument, pred, argument2idx)
 
                     print('FR test:')
-                    score, dev_output = eval_data(srl_model, elmo, labeled_dataset_fr, batch_size, word2idx,
+                    score, dev_output = eval_data(srl_model, elmo, dev_dataset_fr, batch_size, word2idx,
                                                   fr_word2idx,
                                                   lemma2idx,
                                                   pos2idx, pretrain2idx, fr_pretrain2idx, deprel2idx, argument2idx,
