@@ -204,11 +204,14 @@ def get_batch(input_data, batch_size, word2idx, fr_word2idx, lemma2idx, pos2idx,
 
 
         argument_batch = [[argument2idx.get(item[12],argument2idx['_']) for item in sentence] for sentence in data_batch]
-        for i in range(batch_size):
-            for j in range(len(argument_batch[i])):
-                if argument_batch[i][j]>5:
-                    argument_batch[i][j] = 1
+
         pad_argument_batch = np.array(pad_batch(argument_batch, batch_size, argument2idx[_PAD_]))
+
+        for i in range(batch_size):
+            for j in range(len(pad_argument_batch[i])):
+                if pad_argument_batch[i][j]>5:
+                    pad_argument_batch[i][j] = 1
+
         flat_argument_batch = np.array([item for line in pad_argument_batch for item in line])
 
         if False:
